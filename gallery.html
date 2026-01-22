@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | Dan Zigmond</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    p.intro {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .photo {
+      background: #2a2a2a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .photo img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .photo img:hover {
+      transform: scale(1.02);
+    }
+    .photo-name {
+      padding: 0.75rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      word-break: break-all;
+    }
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+    .lightbox-name {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Photo Gallery</h1>
+  <p class="intro">Click any image to view full size. These are candidates for the website.</p>
+
+  <div class="gallery">
+    <div class="photo">
+      <img src="images/DSC04066.jpg" onclick="openLightbox(this)" alt="DSC04066">
+      <div class="photo-name">DSC04066.jpg (RECOMMENDED for hero)</div>
+    </div>
+    <div class="photo">
+      <img src="images/DSC04124.jpg" onclick="openLightbox(this)" alt="DSC04124">
+      <div class="photo-name">DSC04124.jpg (also good for hero)</div>
+    </div>
+    <div class="photo">
+      <img src="images/2I1A0110.jpg" onclick="openLightbox(this)" alt="2I1A0110">
+      <div class="photo-name">2I1A0110.jpg</div>
+    </div>
+    <div class="photo">
+      <img src="images/2I1A0087.jpg" onclick="openLightbox(this)" alt="2I1A0087">
+      <div class="photo-name">2I1A0087.jpg</div>
+    </div>
+    <div class="photo">
+      <img src="images/2I1A0093.jpg" onclick="openLightbox(this)" alt="2I1A0093">
+      <div class="photo-name">2I1A0093.jpg</div>
+    </div>
+    <div class="photo">
+      <img src="images/192A0EFF-633A-4A68-82BC-A813A2D4F496.jpg" onclick="openLightbox(this)" alt="Inner MBA">
+      <div class="photo-name">192A0EFF... (Inner MBA stage)</div>
+    </div>
+    <div class="photo">
+      <img src="images/54040FBF-91AC-4DFB-9708-202B4360D9C4.jpg" onclick="openLightbox(this)" alt="Bookstore">
+      <div class="photo-name">54040FBF... (bookstore reading)</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_0801.jpg" onclick="openLightbox(this)" alt="IMG_0801">
+      <div class="photo-name">IMG_0801.jpg</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_5191.JPG" onclick="openLightbox(this)" alt="IMG_5191">
+      <div class="photo-name">IMG_5191.JPG</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_3830.JPG" onclick="openLightbox(this)" alt="IMG_3830">
+      <div class="photo-name">IMG_3830.JPG</div>
+    </div>
+    <div class="photo">
+      <img src="images/dan-smiling-steps.jpg" onclick="openLightbox(this)" alt="dan-smiling-steps">
+      <div class="photo-name">dan-smiling-steps.jpg (current hero)</div>
+    </div>
+    <div class="photo">
+      <img src="images/MarcusTrawick-90-web.jpg" onclick="openLightbox(this)" alt="MarcusTrawick-90">
+      <div class="photo-name">MarcusTrawick-90-web.jpg (on bench)</div>
+    </div>
+    <div class="photo">
+      <img src="images/MarcusTrawick-204.jpg" onclick="openLightbox(this)" alt="MarcusTrawick-204">
+      <div class="photo-name">MarcusTrawick-204.jpg (robes)</div>
+    </div>
+    <div class="photo">
+      <img src="images/Old school Dan.jpg" onclick="openLightbox(this)" alt="Old school Dan">
+      <div class="photo-name">Old school Dan.jpg</div>
+    </div>
+    <div class="photo">
+      <img src="images/3da87f9a-e518-49ab-899f-37ef84c3dfbe.jpg" onclick="openLightbox(this)" alt="teaching">
+      <div class="photo-name">3da87f9a... (teaching)</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_4064.JPG" onclick="openLightbox(this)" alt="IMG_4064">
+      <div class="photo-name">IMG_4064.JPG (ceremonial robes)</div>
+    </div>
+    <div class="photo">
+      <img src="images/56f2394e-f7dd-4ca2-88b5-b5854ce97a66.jpg" onclick="openLightbox(this)" alt="Esalen">
+      <div class="photo-name">56f2394e... (Esalen)</div>
+    </div>
+    <div class="photo">
+      <img src="images/D786F3A9-D456-4536-AD8E-7BA60CF424CC.jpg" onclick="openLightbox(this)" alt="retreat">
+      <div class="photo-name">D786F3A9... (retreat)</div>
+    </div>
+    <div class="photo">
+      <img src="images/dan-meditation-steps.jpg" onclick="openLightbox(this)" alt="meditation">
+      <div class="photo-name">dan-meditation-steps.jpg</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_3454.JPG" onclick="openLightbox(this)" alt="IMG_3454">
+      <div class="photo-name">IMG_3454.JPG</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_3360.JPG" onclick="openLightbox(this)" alt="IMG_3360">
+      <div class="photo-name">IMG_3360.JPG</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_5913.JPG" onclick="openLightbox(this)" alt="IMG_5913">
+      <div class="photo-name">IMG_5913.JPG</div>
+    </div>
+    <div class="photo">
+      <img src="images/IMG_5916.JPG" onclick="openLightbox(this)" alt="IMG_5916">
+      <div class="photo-name">IMG_5916.JPG</div>
+    </div>
+    <div class="photo">
+      <img src="images/Gemini_Generated_Image_3vocqx3vocqx3voc.png" onclick="openLightbox(this)" alt="Gemini edit">
+      <div class="photo-name">Gemini edited portrait 1</div>
+    </div>
+    <div class="photo">
+      <img src="images/Gemini_Generated_Image_xi9cl6xi9cl6xi9c.png" onclick="openLightbox(this)" alt="Gemini edit 2">
+      <div class="photo-name">Gemini edited portrait 2</div>
+    </div>
+  </div>
+
+  <div class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="Full size">
+    <div class="lightbox-name"></div>
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.querySelector('.lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      const lightboxName = lightbox.querySelector('.lightbox-name');
+      lightboxImg.src = img.src;
+      lightboxName.textContent = img.src.split('/').pop();
+      lightbox.classList.add('active');
+    }
+    function closeLightbox() {
+      document.querySelector('.lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
