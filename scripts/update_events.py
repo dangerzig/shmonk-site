@@ -70,6 +70,8 @@ def fetch_sfdc_events():
     Note: SFDC uses Gatsby with client-side rendering, so we try multiple approaches:
     1. Fetch the page-data.json endpoints that Gatsby uses
     2. Fall back to searching the HTML if that fails
+
+    SFDC events are always at 7pm and are hybrid (in-person and online).
     """
     events = []
     try:
@@ -103,10 +105,13 @@ def fetch_sfdc_events():
                                         event_url = node.get('url', node.get('slug', ''))
                                         if event_url and not event_url.startswith('http'):
                                             event_url = f"https://sfdharmacollective.org{event_url}"
+                                        date_str = node.get('date', node.get('startDate', ''))
+                                        if date_str:
+                                            date_str = f"{date_str}, 7pm"
                                         events.append({
                                             'title': title or 'Event with Dan Zigmond',
-                                            'date': node.get('date', node.get('startDate', '')),
-                                            'location': 'SF Dharma Collective, San Francisco',
+                                            'date': date_str,
+                                            'location': 'SF Dharma Collective, San Francisco · Hybrid (in-person and online)',
                                             'url': event_url or 'https://sfdharmacollective.org/upcoming-events'
                                         })
             except Exception as e:
@@ -135,8 +140,8 @@ def fetch_sfdc_events():
 
                         events.append({
                             'title': title,
-                            'date': '',
-                            'location': 'SF Dharma Collective, San Francisco',
+                            'date': '',  # Date would need parsing, but time is always 7pm
+                            'location': 'SF Dharma Collective, San Francisco · Hybrid (in-person and online)',
                             'url': event_url
                         })
     except Exception as e:
