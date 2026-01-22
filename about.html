@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Dan Zigmond</title>
+  <meta name="description" content="Dan Zigmond is a veteran tech executive turned coach, with leadership experience at Apple, Instagram, YouTube, and Google. He's also a Zen priest and author.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Dan Zigmond</a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="bio-section">
+          <div class="bio-image">
+            <img src="images/Old school Dan.jpg" alt="Dan Zigmond">
+          </div>
+          <div class="bio-content">
+            <h1>About</h1>
+            <p class="lead">I've spent my career at the intersection of technology and human experience—building products that reach billions, leading teams through rapid growth, and thinking deeply about what it means to work well.</p>
+
+            <p>Most recently, I was VP of Data and AI at Headspace, where I led AI strategy and developed LLM-based mental health tools. Before that, I spent four years at Apple as an Engineering Director, launching Apple Journal and contributing to products including iOS Focus Modes, Fitness+, and Vision Pro.</p>
+
+            <p>At Meta, I led data science organizations at both Facebook and Instagram—scaling the News Feed analytics team from 7 to 70 people, then leading a 150-person organization covering all of Instagram's core product areas. At YouTube, I built the data science team from scratch and helped grow ad revenue from near zero to $1 billion.</p>
+
+            <p>Along the way, I've learned a great deal about what makes leaders effective—and what burns them out. I've managed through hypergrowth and uncertainty, navigated complex organizational politics, and mentored hundreds of emerging leaders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <div class="bio-section">
+          <div class="bio-image">
+            <img src="images/MarcusTrawick-204.jpg" alt="Dan Zigmond in Zen robes">
+          </div>
+          <div class="bio-content">
+            <h2>A contemplative practice</h2>
+            <p>Alongside my tech career, I've maintained a serious contemplative practice. I'm an ordained Zen priest and serve as a Guiding Teacher at Jikoji Zen Center, a Zen Buddhist temple in the hills above Silicon Valley. I'm also a faculty member at the Esalen Institute and a trustee of Naropa University.</p>
+
+            <p>This isn't separate from my professional work—it's deeply connected. My books <em>Buddha's Diet</em> and <em>Buddha's Office</em> explore how ancient wisdom applies to modern challenges. The same principles that inform my meditation teaching—attention, clarity, equanimity—shape how I approach coaching.</p>
+
+            <p>I don't impose this perspective on anyone. But it gives me a different lens for looking at leadership: one that values presence over performance, sustainability over sprinting, and wisdom over mere cleverness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-narrow">
+        <h2>Education & recognition</h2>
+        <p>I studied at the University of Pennsylvania, graduating cum laude with a self-designed major in Computational Neuroscience. My senior thesis was on neural network modeling—back when AI was a niche academic interest.</p>
+
+        <p>I've been named one of Wired's "20 Business Geniuses You Need to Know" and have published in the Harvard Business Review, TechCrunch, and peer-reviewed academic journals. I've also written two RFCs (internet standards) and presented research at international conferences.</p>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container-narrow">
+        <h2>Advisory work</h2>
+        <p>Beyond my operating roles, I advise companies and organizations on data strategy, AI, and leadership. Current and past advisory relationships include:</p>
+        <ul class="services-list">
+          <li>Medium</li>
+          <li>Compound (VC)</li>
+          <li>Metamorphic Ventures</li>
+          <li>AliveCor</li>
+          <li>Grand Rounds</li>
+          <li>Tia</li>
+          <li>Zindi</li>
+          <li>Harvard Computational Science and Engineering program</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-narrow" style="text-align: center;">
+        <p><a href="coaching.html" class="btn btn-primary">Learn about coaching</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dan Zigmond</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/danzigmond/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:djz@shmonk.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

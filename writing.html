@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing | Dan Zigmond</title>
+  <meta name="description" content="Books and articles by Dan Zigmond, including Buddha's Diet and Buddha's Office. Writing on leadership, mindfulness, data science, and technology.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Dan Zigmond</a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="writing.html" class="active">Writing</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container-narrow">
+        <h1>Writing</h1>
+        <p class="lead">I write about leadership, work, mindfulness, and the places where technology meets human experience.</p>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <h2>Books</h2>
+        <div class="book-grid">
+          <div class="book-item">
+            <div class="book-cover">
+              <img src="images/buddhas-office-cover.jpg" alt="Buddha's Office book cover" style="height: 100%; width: auto; object-fit: contain;">
+            </div>
+            <h3>Buddha's Office</h3>
+            <p class="publisher">Running Press, 2019</p>
+            <p>The ancient art of waking up while working well. A practical guide to bringing mindfulness and wisdom to your professional life—without quitting your job or moving to a monastery.</p>
+          </div>
+          <div class="book-item">
+            <div class="book-cover">
+              <img src="images/buddhas-diet-cover.jpg" alt="Buddha's Diet book cover" style="height: 100%; width: auto; object-fit: contain;">
+            </div>
+            <h3>Buddha's Diet</h3>
+            <p class="publisher">Running Press, 2016</p>
+            <p>The ancient art of losing weight without losing your mind. Drawing on what the Buddha actually said about eating, combined with modern science on metabolism and timing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-narrow">
+        <h2>Selected articles</h2>
+        <ul class="services-list">
+          <li><strong>Multitaskers May Be Advertisers' Best Audience</strong> — Harvard Business Review, 2011</li>
+          <li><strong>Buddha Was a Data Scientist</strong> — TechCrunch, 2016</li>
+          <li><strong>From Big Data to Big Bets on Food Science</strong> — Wired, 2015</li>
+          <li><strong>How Buddha Would Fight Burnout</strong> — The Forge, 2019</li>
+          <li><strong>You Are Not Your Job</strong> — Medium, 2020</li>
+          <li><strong>Dealing with Distractions</strong> — Medium, 2020</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container-narrow">
+        <h2>Academic & technical publications</h2>
+        <p>I've also published peer-reviewed research on topics ranging from epidemiology to computational linguistics to television advertising:</p>
+        <ul class="services-list">
+          <li><strong>Distinguishing Commentary from Canon: Experiments in Pali Computational Linguistics</strong> — 18th World Sanskrit Conference, 2023</li>
+          <li><strong>Minimal Model For Household-Based Testing & Tracing In Epidemics</strong> — Physical Biology, 2021</li>
+          <li><strong>Toward a Computational Analysis of the Pali Canon</strong> — Journal of the Oxford Centre for Buddhist Studies, 2021</li>
+          <li><strong>Measuring Advertising Quality on Television</strong> — Journal of Advertising Research, 2009</li>
+          <li><strong>Google's Auction for TV Ads</strong> — International Colloquium on Automata, Languages & Programming, 2009</li>
+          <li><strong>RFC 2838: Uniform Resource Identifiers for Television Broadcasts</strong> — IETF, 2000</li>
+          <li><strong>RFC 2728: Transmission of IP Over the Vertical Blanking Interval</strong> — IETF, 1999</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dan Zigmond</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/danzigmond/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:djz@shmonk.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
