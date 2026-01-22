@@ -65,34 +65,80 @@ def fetch_esalen_events():
     return events
 
 def fetch_sfdc_events():
-    """Fetch Dan Zigmond's events from SF Dharma Collective."""
+    """Fetch Dan Zigmond's events from SF Dharma Collective.
+
+    Note: SFDC uses Gatsby with client-side rendering, so we try multiple approaches:
+    1. Fetch the page-data.json endpoints that Gatsby uses
+    2. Fall back to searching the HTML if that fails
+    """
     events = []
     try:
-        url = "https://sfdharmacollective.org/upcoming-events"
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
+        # Try Gatsby page-data endpoint first
+        page_data_urls = [
+            "https://sfdharmacollective.org/page-data/upcoming-events/page-data.json",
+            "https://sfdharmacollective.org/page-data/events/page-data.json",
+        ]
 
-        # Look for events mentioning Dan Zigmond
-        page_text = soup.get_text().lower()
-        if 'dan zigmond' in page_text or 'zigmond' in page_text:
-            # Found a mention, try to extract event details
-            for event in soup.find_all(['article', 'div'], class_=re.compile(r'event')):
-                if 'zigmond' in event.get_text().lower():
-                    title_elem = event.find(['h2', 'h3', 'h4', 'a'])
-                    title = title_elem.get_text(strip=True) if title_elem else "Event"
+        for page_data_url in page_data_urls:
+            try:
+                response = requests.get(page_data_url, timeout=10)
+                if response.status_code == 200:
+                    import json
+                    data = response.json()
+                    # Search through the JSON for events mentioning Dan Zigmond
+                    data_str = json.dumps(data).lower()
+                    if 'zigmond' in data_str or 'dan' in data_str:
+                        # Found potential match - parse the structure
+                        # Gatsby stores data in result.data or result.pageContext
+                        result = data.get('result', {})
+                        page_data = result.get('data', {})
 
-                    link = event.find('a', href=True)
-                    url = link['href'] if link else "https://sfdharmacollective.org/upcoming-events"
-                    if not url.startswith('http'):
-                        url = f"https://sfdharmacollective.org{url}"
+                        # Look for event-like structures
+                        for key, value in page_data.items():
+                            if isinstance(value, dict) and 'edges' in value:
+                                for edge in value['edges']:
+                                    node = edge.get('node', {})
+                                    title = node.get('title', node.get('name', ''))
+                                    if 'zigmond' in str(node).lower():
+                                        event_url = node.get('url', node.get('slug', ''))
+                                        if event_url and not event_url.startswith('http'):
+                                            event_url = f"https://sfdharmacollective.org{event_url}"
+                                        events.append({
+                                            'title': title or 'Event with Dan Zigmond',
+                                            'date': node.get('date', node.get('startDate', '')),
+                                            'location': 'SF Dharma Collective, San Francisco',
+                                            'url': event_url or 'https://sfdharmacollective.org/upcoming-events'
+                                        })
+            except Exception as e:
+                print(f"  Could not fetch {page_data_url}: {e}")
+                continue
 
-                    events.append({
-                        'title': title,
-                        'date': '',  # Would need more parsing
-                        'location': 'SF Dharma Collective, San Francisco',
-                        'url': url
-                    })
+        # Fallback: try the HTML approach
+        if not events:
+            url = "https://sfdharmacollective.org/upcoming-events"
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+
+            # Look for events mentioning Dan Zigmond
+            page_text = soup.get_text().lower()
+            if 'dan zigmond' in page_text or 'zigmond' in page_text:
+                for event in soup.find_all(['article', 'div'], class_=re.compile(r'event')):
+                    if 'zigmond' in event.get_text().lower():
+                        title_elem = event.find(['h2', 'h3', 'h4', 'a'])
+                        title = title_elem.get_text(strip=True) if title_elem else "Event"
+
+                        link = event.find('a', href=True)
+                        event_url = link['href'] if link else "https://sfdharmacollective.org/upcoming-events"
+                        if not event_url.startswith('http'):
+                            event_url = f"https://sfdharmacollective.org{event_url}"
+
+                        events.append({
+                            'title': title,
+                            'date': '',
+                            'location': 'SF Dharma Collective, San Francisco',
+                            'url': event_url
+                        })
     except Exception as e:
         print(f"Error fetching SF Dharma Collective events: {e}")
 
