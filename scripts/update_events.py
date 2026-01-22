@@ -111,7 +111,7 @@ def fetch_sfdc_events():
                                         events.append({
                                             'title': title or 'Event with Dan Zigmond',
                                             'date': date_str,
-                                            'location': 'SF Dharma Collective, San Francisco · In-person and online',
+                                            'location': 'SF Dharma Collective, San Francisco · (in-person and online)',
                                             'url': event_url or 'https://sfdharmacollective.org/upcoming-events'
                                         })
             except Exception as e:
@@ -141,7 +141,7 @@ def fetch_sfdc_events():
                         events.append({
                             'title': title,
                             'date': '',  # Date would need parsing, but time is always 7pm
-                            'location': 'SF Dharma Collective, San Francisco · In-person and online',
+                            'location': 'SF Dharma Collective, San Francisco · (in-person and online)',
                             'url': event_url
                         })
     except Exception as e:
