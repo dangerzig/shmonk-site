@@ -747,7 +747,7 @@ footer a:hover {
   margin-bottom: 0;
 }
 
-/* Consistent bottom CTA section */
+/* Consistent bottom CTA section (legacy) */
 .bottom-cta {
   text-align: center;
   padding: var(--spacing-xl) 0;
@@ -760,4 +760,76 @@ footer a:hover {
 .bottom-cta p {
   max-width: none;
   margin-bottom: var(--spacing-md);
+}
+
+/* ==================== CTA Block (new) ==================== */
+.cta-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.cta-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: calc(var(--spacing-md) + 0.5rem);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+.cta-title {
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.cta-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 4px;
+  height: 1.2em;
+  background-color: var(--color-accent);
+}
+
+.cta-lead {
+  color: var(--color-text-light);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+  max-width: 65ch;
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.cta-meta {
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: 0.98rem;
+}
+
+.cta-card a:focus-visible,
+.cta-card button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+  .cta-card {
+    padding: var(--spacing-md);
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+  .cta-lead {
+    font-size: 1.1rem;
+  }
 }
