@@ -708,6 +708,45 @@ footer a:hover {
   margin-top: 0.5rem;
 }
 
+/* 3-step process */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.process-step {
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.process-step .step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.process-step h3 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.process-step p {
+  max-width: none;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
 /* Consistent bottom CTA section */
 .bottom-cta {
   text-align: center;
