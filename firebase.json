@@ -3,10 +3,20 @@
     "public": ".",
     "ignore": [
       "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
+      ".git",
+      ".git/**",
+      ".firebase",
+      ".firebase/**",
+      ".claude",
+      ".claude/**",
+      ".gitignore",
+      ".firebaserc",
+      ".DS_Store",
+      "node_modules",
+      "node_modules/**",
       "package.json",
       "package-lock.json",
+      "scripts",
       "scripts/**"
     ]
   }
