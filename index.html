@@ -7,6 +7,56 @@
   <meta name="description" content="Executive coaching from a Zen priest who's led teams at Apple, Instagram, YouTube, and Facebook. A different kind of guide for a different kind of leader.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    .logo-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .logo-strip img {
+      height: 20px;
+      width: auto;
+      opacity: 0.6;
+      filter: grayscale(100%);
+      transition: opacity 0.2s, filter 0.2s;
+    }
+    .logo-strip img:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+    .logo-strip img[alt="Instagram"] {
+      height: 28px;
+      position: relative;
+      top: -2px;
+    }
+    .logo-strip img[alt="Meta"] {
+      height: 16px;
+    }
+    .logo-strip img[alt="Google"] {
+      height: 22px;
+      position: relative;
+      top: 2px;
+    }
+    .logo-strip img[alt="YouTube"] {
+      height: 18px;
+    }
+    .logo-strip img[alt="Microsoft"] {
+      height: 18px;
+    }
+    /* Reduce mobile hero whitespace */
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .hero-image {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -37,6 +87,14 @@
           <div class="hero-content">
             <h1>The most successful people in the world wrestle with presence and purpose.</h1>
             <p class="lead">I help them find both.</p>
+            <a href="about.html#formation" class="logo-strip">
+              <img src="images/logos/apple.svg" alt="Apple">
+              <img src="images/logos/meta.svg" alt="Meta">
+              <img src="images/logos/instagram.svg" alt="Instagram">
+              <img src="images/logos/google.svg" alt="Google">
+              <img src="images/logos/youtube.svg" alt="YouTube">
+              <img src="images/logos/microsoft.svg" alt="Microsoft">
+            </a>
             <p style="color: var(--color-text-light); font-size: 1rem;">I work with people navigating moments of transition in their professional or personal lives.</p>
             <p style="color: var(--color-text-light); font-size: 1rem; margin-bottom: var(--spacing-md);">Executive coaching for leaders who've achieved success – and are ready to go deeper.</p>
             <a href="coaching.html" class="btn btn-primary">Learn about coaching</a>
