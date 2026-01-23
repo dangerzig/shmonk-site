@@ -52,8 +52,7 @@
           <p><a href="mailto:djz@shmonk.com">djz@shmonk.com</a></p>
 
           <h2 style="margin-top: 2rem;">Or send a message</h2>
-          <form action="https://formspree.io/f/xykejqdj" method="POST" style="margin-top: 1rem;">
-            <input type="hidden" name="_next" value="https://shmonk.com/contact.html?sent=1">
+          <form id="contact-form" action="https://formspree.io/f/xykejqdj" method="POST" style="margin-top: 1rem;">
             <div style="margin-bottom: 1rem;">
               <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
               <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; font-size: 1rem; border: 1px solid var(--color-border); border-radius: 4px;">
@@ -137,11 +136,32 @@
       document.querySelector('nav').classList.toggle('active');
     });
 
-    // Show thank you message if redirected from form submission
-    if (window.location.search.includes('sent=1')) {
-      const form = document.querySelector('form');
-      form.innerHTML = '<p style="font-size: 1.1rem; color: var(--color-primary);">Thank you for your message. I\'ll be in touch soon.</p>';
-    }
+    // Handle form submission without leaving page
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const button = form.querySelector('button');
+      button.textContent = 'Sending...';
+      button.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          form.innerHTML = '<p style="font-size: 1.1rem; color: var(--color-primary);">Thank you for your message. I\'ll be in touch soon.</p>';
+        } else {
+          button.textContent = 'Send Message';
+          button.disabled = false;
+          alert('Something went wrong. Please try emailing directly.');
+        }
+      }).catch(function() {
+        button.textContent = 'Send Message';
+        button.disabled = false;
+        alert('Something went wrong. Please try emailing directly.');
+      });
+    });
   </script>
 </body>
 </html>
