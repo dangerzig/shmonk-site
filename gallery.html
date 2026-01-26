@@ -42,11 +42,11 @@
     .photo img:hover {
       transform: scale(1.02);
     }
-    .photo-name {
+    .photo-desc {
       padding: 0.75rem;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #aaa;
-      word-break: break-all;
+      line-height: 1.4;
     }
     .lightbox {
       display: none;
@@ -74,13 +74,15 @@
       color: #fff;
       cursor: pointer;
     }
-    .lightbox-name {
+    .lightbox-desc {
       position: absolute;
       bottom: 1rem;
       left: 50%;
       transform: translateX(-50%);
-      color: #888;
+      color: #aaa;
       font-size: 0.9rem;
+      text-align: center;
+      max-width: 80%;
     }
   </style>
 </head>
@@ -90,326 +92,303 @@
 
   <div class="gallery">
     <div class="photo">
-      <img src="images/0B4B6E4C-5076-4E41-9623-94DF61496E86.jpg" onclick="openLightbox(this)" alt="Naropa">
-      <div class="photo-name">Naropa</div>
+      <img src="images/dan-processed-2492_4x5_crop_no_ring.jpg" alt="Professional headshot, arms crossed" data-desc="Professional headshot, arms crossed" onclick="openLightbox(this)">
+      <div class="photo-desc">Professional headshot, arms crossed</div>
     </div>
     <div class="photo">
-      <img src="images/109C55DA-DD02-48E8-9880-9BB61350EFB4.png" onclick="openLightbox(this)" alt="Teaching B&W">
-      <div class="photo-name">Teaching B&W</div>
+      <img src="images/dan-headshot.jpg" alt="Professional headshot portrait" data-desc="Professional headshot portrait" onclick="openLightbox(this)">
+      <div class="photo-desc">Professional headshot portrait</div>
     </div>
     <div class="photo">
-      <img src="images/192A0EFF-633A-4A68-82BC-A813A2D4F496.jpg" onclick="openLightbox(this)" alt="Inner MBA">
-      <div class="photo-name">Inner MBA</div>
+      <img src="images/dan-portrait-post.jpg" alt="Portrait leaning against a wooden post" data-desc="Portrait leaning against a wooden post" onclick="openLightbox(this)">
+      <div class="photo-desc">Portrait leaning against a wooden post</div>
     </div>
     <div class="photo">
-      <img src="images/1bf2523a-b379-4422-a689-028501c5da8e.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">1bf2523a...</div>
+      <img src="images/345b91777d9c50c2436f43302c32b48f06eb97a8acfb0cb6d8d0a2536b264c55.png" alt="Smiling warmly at the camera, arms crossed" data-desc="Smiling warmly at the camera, arms crossed" onclick="openLightbox(this)">
+      <div class="photo-desc">Smiling warmly at the camera, arms crossed</div>
     </div>
     <div class="photo">
-      <img src="images/282bb132-e0cd-4971-a7e9-2e94ffb7dadd.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">282bb132...</div>
+      <img src="images/6EA74060-DB2B-475C-8BD2-D9358DA4FB0E.png" alt="Close-up portrait with a blue mug" data-desc="Close-up portrait with a blue mug" onclick="openLightbox(this)">
+      <div class="photo-desc">Close-up portrait with a blue mug</div>
     </div>
     <div class="photo">
-      <img src="images/2I1A0087.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">2I1A0087.jpg</div>
+      <img src="images/Old school Dan.jpg" alt="Working on a laptop in a tech office" data-desc="Working on a laptop in a tech office" onclick="openLightbox(this)">
+      <div class="photo-desc">Working on a laptop in a tech office</div>
     </div>
     <div class="photo">
-      <img src="images/2I1A0093.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">2I1A0093.jpg</div>
+      <img src="images/MarcusTrawick-90-web.jpg" alt="Sitting quietly on a garden bench (black and white)" data-desc="Sitting quietly on a garden bench (black and white)" onclick="openLightbox(this)">
+      <div class="photo-desc">Sitting quietly on a garden bench (black and white)</div>
     </div>
     <div class="photo">
-      <img src="images/2I1A0110.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">2I1A0110.jpg</div>
+      <img src="images/MarcusTrawick-204.jpg" alt="Walking along a brick garden path in Zen robes" data-desc="Walking along a brick garden path in Zen robes" onclick="openLightbox(this)">
+      <div class="photo-desc">Walking along a brick garden path in Zen robes</div>
     </div>
     <div class="photo">
-      <img src="images/345b91777d9c50c2436f43302c32b48f06eb97a8acfb0cb6d8d0a2536b264c55.png" onclick="openLightbox(this)" alt="Table portrait cropped">
-      <div class="photo-name">Table portrait cropped</div>
+      <img src="images/MarcusTrawick-205.jpg" alt="Walking along a garden path in Zen robes (black and white)" data-desc="Walking along a garden path in Zen robes (black and white)" onclick="openLightbox(this)">
+      <div class="photo-desc">Walking along a garden path in Zen robes (black and white)</div>
     </div>
     <div class="photo">
-      <img src="images/3da87f9a-e518-49ab-899f-37ef84c3dfbe.jpg" onclick="openLightbox(this)" alt="Teaching">
-      <div class="photo-name">Teaching</div>
+      <img src="images/0B4B6E4C-5076-4E41-9623-94DF61496E86.jpg" alt="Bowing in prayer at a ceremonial altar" data-desc="Bowing in prayer at a ceremonial altar" onclick="openLightbox(this)">
+      <div class="photo-desc">Bowing in prayer at a ceremonial altar</div>
     </div>
     <div class="photo">
-      <img src="images/40623dc6-d1e0-4f6b-87b1-52c7db49cd33.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">40623dc6...</div>
+      <img src="images/4cbd3a80-93c6-4423-8248-54c7d453bca0.jpg" alt="In formal Japanese Buddhist robes, seated before a Buddha statue" data-desc="In formal Japanese Buddhist robes, seated before a Buddha statue" onclick="openLightbox(this)">
+      <div class="photo-desc">In formal Japanese Buddhist robes, seated before a Buddha statue</div>
     </div>
     <div class="photo">
-      <img src="images/45026e76-fb9c-4e22-a7cb-a10a99dae196.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">45026e76...</div>
+      <img src="images/ChatGPT Image Jan 22, 2026 at 01_38_37 PM.png" alt="In Zen robes before a Buddha statue with a ceremonial staff" data-desc="In Zen robes before a Buddha statue with a ceremonial staff" onclick="openLightbox(this)">
+      <div class="photo-desc">In Zen robes before a Buddha statue with a ceremonial staff</div>
     </div>
     <div class="photo">
-      <img src="images/4cbd3a80-93c6-4423-8248-54c7d453bca0.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">4cbd3a80...</div>
+      <img src="images/IMG_4064.JPG" alt="Formal portrait at Sojiji Temple in ceremonial robes" data-desc="Formal portrait at Sojiji Temple in ceremonial robes" onclick="openLightbox(this)">
+      <div class="photo-desc">Formal portrait at Sojiji Temple in ceremonial robes</div>
     </div>
     <div class="photo">
-      <img src="images/51e2ddfc-63a3-4a9a-8185-a672f8e2348e.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">51e2ddfc...</div>
+      <img src="images/IMG_4064-cropped.jpg" alt="In red Buddhist robes beside a golden Buddha statue" data-desc="In red Buddhist robes beside a golden Buddha statue" onclick="openLightbox(this)">
+      <div class="photo-desc">In red Buddhist robes beside a golden Buddha statue</div>
     </div>
     <div class="photo">
-      <img src="images/5397fe4b-da59-4f10-8fa7-500d8541e907.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">5397fe4b...</div>
+      <img src="images/IMG_4065.JPG" alt="At Eiheiji Temple in gold ceremonial Zen robes" data-desc="At Eiheiji Temple in gold ceremonial Zen robes" onclick="openLightbox(this)">
+      <div class="photo-desc">At Eiheiji Temple in gold ceremonial Zen robes</div>
     </div>
     <div class="photo">
-      <img src="images/54040FBF-91AC-4DFB-9708-202B4360D9C4.jpg" onclick="openLightbox(this)" alt="Bookstore">
-      <div class="photo-name">Bookstore</div>
+      <img src="images/IMG_5774.JPG" alt="Zen priests seated in meditation in a Japanese zendo" data-desc="Zen priests seated in meditation in a Japanese zendo" onclick="openLightbox(this)">
+      <div class="photo-desc">Zen priests seated in meditation in a Japanese zendo</div>
     </div>
     <div class="photo">
-      <img src="images/56f2394e-f7dd-4ca2-88b5-b5854ce97a66.jpg" onclick="openLightbox(this)" alt="Esalen">
-      <div class="photo-name">Esalen</div>
+      <img src="images/IMG_5913.JPG" alt="With fellow Zen priests and lay practitioners in a zendo" data-desc="With fellow Zen priests and lay practitioners in a zendo" onclick="openLightbox(this)">
+      <div class="photo-desc">With fellow Zen priests and lay practitioners in a zendo</div>
     </div>
     <div class="photo">
-      <img src="images/578d6a2e-a343-4500-8810-e3deaf2074b9.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">578d6a2e...</div>
+      <img src="images/IMG_5916.JPG" alt="Smiling broadly in Zen robes among practitioners" data-desc="Smiling broadly in Zen robes among practitioners" onclick="openLightbox(this)">
+      <div class="photo-desc">Smiling broadly in Zen robes among practitioners</div>
     </div>
     <div class="photo">
-      <img src="images/668c122f-2db8-4f14-bd8a-a9aa15cc1356 (1).jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">668c122f... (1)</div>
+      <img src="images/shuso.jpg" alt="In Zen robes outdoors with two young girls on a misty day" data-desc="In Zen robes outdoors with two young girls on a misty day" onclick="openLightbox(this)">
+      <div class="photo-desc">In Zen robes outdoors with two young girls on a misty day</div>
     </div>
     <div class="photo">
-      <img src="images/668c122f-2db8-4f14-bd8a-a9aa15cc1356.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">668c122f...</div>
+      <img src="images/192A0EFF-633A-4A68-82BC-A813A2D4F496.jpg" alt="Speaking at the Inner MBA conference" data-desc="Speaking at the Inner MBA conference" onclick="openLightbox(this)">
+      <div class="photo-desc">Speaking at the Inner MBA conference</div>
     </div>
     <div class="photo">
-      <img src="images/6EA74060-DB2B-475C-8BD2-D9358DA4FB0E.png" onclick="openLightbox(this)" alt="Table portrait">
-      <div class="photo-name">Table portrait</div>
+      <img src="images/IMG_0801.jpg" alt="Gesturing while speaking at the Inner MBA conference" data-desc="Gesturing while speaking at the Inner MBA conference" onclick="openLightbox(this)">
+      <div class="photo-desc">Gesturing while speaking at the Inner MBA conference</div>
     </div>
     <div class="photo">
-      <img src="images/7fc6dbfa-a90d-458a-88ba-115d2b6c26b0.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">7fc6dbfa...</div>
+      <img src="images/DSC04066.jpg" alt="Speaking outdoors with a microphone" data-desc="Speaking outdoors with a microphone" onclick="openLightbox(this)">
+      <div class="photo-desc">Speaking outdoors with a microphone</div>
     </div>
     <div class="photo">
-      <img src="images/87a25b53-e339-46b6-a782-a0e5dc5b5784.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">87a25b53...</div>
+      <img src="images/DSC04124.jpg" alt="Speaking with hand on chest during an outdoor talk" data-desc="Speaking with hand on chest during an outdoor talk" onclick="openLightbox(this)">
+      <div class="photo-desc">Speaking with hand on chest during an outdoor talk</div>
     </div>
     <div class="photo">
-      <img src="images/904964f7-fcf9-4cd7-bbce-b3f17cf45f32.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">904964f7...</div>
+      <img src="images/IMG_5191.JPG" alt="Panel discussion on stage" data-desc="Panel discussion on stage" onclick="openLightbox(this)">
+      <div class="photo-desc">Panel discussion on stage</div>
     </div>
     <div class="photo">
-      <img src="images/93125dfb-023a-4ba7-9ff8-9a93c740adf2.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">93125dfb...</div>
+      <img src="images/D0C373BC-ECC8-4A0D-8072-E4CD7AA91E92.jpeg" alt="At a book reading event with Buddha's Office" data-desc="At a book reading event with Buddha's Office" onclick="openLightbox(this)">
+      <div class="photo-desc">At a book reading event with Buddha's Office</div>
     </div>
     <div class="photo">
-      <img src="images/97601f8b-ef8e-41ce-8e14-22df07c77177.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">97601f8b...</div>
+      <img src="images/2I1A0087.jpg" alt="Reading from a book on stage in an elegant stone-walled venue" data-desc="Reading from a book on stage in an elegant stone-walled venue" onclick="openLightbox(this)">
+      <div class="photo-desc">Reading from a book on stage in an elegant stone-walled venue</div>
     </div>
     <div class="photo">
-      <img src="images/9e7bfc55-a744-4ed7-9871-3129b605a0bd.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">9e7bfc55...</div>
+      <img src="images/2I1A0093.jpg" alt="Reading on stage, wider angle showing the venue" data-desc="Reading on stage, wider angle showing the venue" onclick="openLightbox(this)">
+      <div class="photo-desc">Reading on stage, wider angle showing the venue</div>
     </div>
     <div class="photo">
-      <img src="images/b5a8230b-e99e-4632-a6ab-59be030412ca.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">b5a8230b...</div>
+      <img src="images/2I1A0110.jpg" alt="Close-up speaking to the audience while holding a book" data-desc="Close-up speaking to the audience while holding a book" onclick="openLightbox(this)">
+      <div class="photo-desc">Close-up speaking to the audience while holding a book</div>
     </div>
     <div class="photo">
-      <img src="images/buddhas-diet-cover.jpg" onclick="openLightbox(this)" alt="Buddha's Diet cover">
-      <div class="photo-name">Buddha's Diet cover</div>
+      <img src="images/54040FBF-91AC-4DFB-9708-202B4360D9C4.jpg" alt="Speaking at a bookstore podium" data-desc="Speaking at a bookstore podium" onclick="openLightbox(this)">
+      <div class="photo-desc">Speaking at a bookstore podium</div>
     </div>
     <div class="photo">
-      <img src="images/buddhas-office-cover.jpg" onclick="openLightbox(this)" alt="Buddha's Office cover">
-      <div class="photo-name">Buddha's Office cover</div>
+      <img src="images/IMG_1679.jpeg" alt="Addressing a seated audience from a podium" data-desc="Addressing a seated audience from a podium" onclick="openLightbox(this)">
+      <div class="photo-desc">Addressing a seated audience from a podium</div>
     </div>
     <div class="photo">
-      <img src="images/c4ec4ebe-a06f-4cd9-9a76-50b264456c0c.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">c4ec4ebe...</div>
+      <img src="images/IMG_3360.JPG" alt="Presenting at a dark wooden podium" data-desc="Presenting at a dark wooden podium" onclick="openLightbox(this)">
+      <div class="photo-desc">Presenting at a dark wooden podium</div>
     </div>
     <div class="photo">
-      <img src="images/ChatGPT Image Jan 21, 2026 at 05_03_48 PM.png" onclick="openLightbox(this)" alt="ChatGPT edited 1">
-      <div class="photo-name">ChatGPT edited 1</div>
+      <img src="images/IMG_3454.JPG" alt="Bookstore event, wide shot with audience" data-desc="Bookstore event, wide shot with audience" onclick="openLightbox(this)">
+      <div class="photo-desc">Bookstore event, wide shot with audience</div>
     </div>
     <div class="photo">
-      <img src="images/ChatGPT Image Jan 21, 2026 at 05_05_53 PM.png" onclick="openLightbox(this)" alt="ChatGPT edited 2">
-      <div class="photo-name">ChatGPT edited 2</div>
+      <img src="images/IMG_3455.JPG" alt="Smiling at the podium during a bookstore event" data-desc="Smiling at the podium during a bookstore event" onclick="openLightbox(this)">
+      <div class="photo-desc">Smiling at the podium during a bookstore event</div>
     </div>
     <div class="photo">
-      <img src="images/ChatGPT Image Jan 22, 2026 at 01_38_37 PM.png" onclick="openLightbox(this)" alt="Japan recognition cropped">
-      <div class="photo-name">Japan recognition cropped</div>
+      <img src="images/IMG_3830.JPG" alt="Teaching in a bright, airy room" data-desc="Teaching in a bright, airy room" onclick="openLightbox(this)">
+      <div class="photo-desc">Teaching in a bright, airy room</div>
     </div>
     <div class="photo">
-      <img src="images/D0C373BC-ECC8-4A0D-8072-E4CD7AA91E92.jpeg" onclick="openLightbox(this)" alt="Seated reading">
-      <div class="photo-name">Seated reading</div>
+      <img src="images/668c122f-2db8-4f14-bd8a-a9aa15cc1356.jpg" alt="Speaking to a seated audience at night" data-desc="Speaking to a seated audience at night" onclick="openLightbox(this)">
+      <div class="photo-desc">Speaking to a seated audience at night</div>
     </div>
     <div class="photo">
-      <img src="images/D786F3A9-D456-4536-AD8E-7BA60CF424CC.jpg" onclick="openLightbox(this)" alt="Retreat">
-      <div class="photo-name">Retreat</div>
+      <img src="images/109C55DA-DD02-48E8-9880-9BB61350EFB4.png" alt="Standing among seated participants in a tent (black and white)" data-desc="Standing among seated participants in a tent (black and white)" onclick="openLightbox(this)">
+      <div class="photo-desc">Standing among seated participants in a tent (black and white)</div>
     </div>
     <div class="photo">
-      <img src="images/dan-headshot.jpg" onclick="openLightbox(this)" alt="Headshot">
-      <div class="photo-name">Headshot</div>
+      <img src="images/1bf2523a-b379-4422-a689-028501c5da8e.jpg" alt="Seated with a singing bowl in a sunlit room overlooking the ocean" data-desc="Seated with a singing bowl in a sunlit room overlooking the ocean" onclick="openLightbox(this)">
+      <div class="photo-desc">Seated with a singing bowl in a sunlit room overlooking the ocean</div>
     </div>
     <div class="photo">
-      <img src="images/dan-laughing-tight.jpg" onclick="openLightbox(this)" alt="Laughing tight crop">
-      <div class="photo-name">Laughing tight crop</div>
+      <img src="images/3da87f9a-e518-49ab-899f-37ef84c3dfbe.jpg" alt="Smiling while teaching a meditation session" data-desc="Smiling while teaching a meditation session" onclick="openLightbox(this)">
+      <div class="photo-desc">Smiling while teaching a meditation session</div>
     </div>
     <div class="photo">
-      <img src="images/dan-meditation-steps.jpg" onclick="openLightbox(this)" alt="Meditation steps">
-      <div class="photo-name">Meditation steps</div>
+      <img src="images/56f2394e-f7dd-4ca2-88b5-b5854ce97a66.jpg" alt="Laughing during a meditation class" data-desc="Laughing during a meditation class" onclick="openLightbox(this)">
+      <div class="photo-desc">Laughing during a meditation class</div>
     </div>
     <div class="photo">
-      <img src="images/dan-portrait-cropped.jpg" onclick="openLightbox(this)" alt="Portrait cropped">
-      <div class="photo-name">Portrait cropped</div>
+      <img src="images/IMG_3731.jpg" alt="Seated on a platform in a sunlit meditation space" data-desc="Seated on a platform in a sunlit meditation space" onclick="openLightbox(this)">
+      <div class="photo-desc">Seated on a platform in a sunlit meditation space</div>
     </div>
     <div class="photo">
-      <img src="images/dan-portrait-post.jpg" onclick="openLightbox(this)" alt="Portrait post">
-      <div class="photo-name">Portrait post</div>
+      <img src="images/IMG_3923.jpg" alt="Striking a singing bowl by large windows" data-desc="Striking a singing bowl by large windows" onclick="openLightbox(this)">
+      <div class="photo-desc">Striking a singing bowl by large windows</div>
     </div>
     <div class="photo">
-      <img src="images/dan-processed-2492_4x5_crop_no_ring.jpg" onclick="openLightbox(this)" alt="Professional portrait">
-      <div class="photo-name">Professional portrait</div>
+      <img src="images/IMG_3934.jpg" alt="Hands pressed together in gassho with singing bowl and flowers" data-desc="Hands pressed together in gassho with singing bowl and flowers" onclick="openLightbox(this)">
+      <div class="photo-desc">Hands pressed together in gassho with singing bowl and flowers</div>
     </div>
     <div class="photo">
-      <img src="images/dan-smiling-cropped.jpg" onclick="openLightbox(this)" alt="Smiling cropped">
-      <div class="photo-name">Smiling cropped</div>
+      <img src="images/7fc6dbfa-a90d-458a-88ba-115d2b6c26b0.jpg" alt="Reading from a book to seated meditation students" data-desc="Reading from a book to seated meditation students" onclick="openLightbox(this)">
+      <div class="photo-desc">Reading from a book to seated meditation students</div>
     </div>
     <div class="photo">
-      <img src="images/dan-smiling-steps.jpg" onclick="openLightbox(this)" alt="Smiling steps">
-      <div class="photo-name">Smiling steps</div>
+      <img src="images/51e2ddfc-63a3-4a9a-8185-a672f8e2348e.jpg" alt="Reading in a meditation room with students on cushions" data-desc="Reading in a meditation room with students on cushions" onclick="openLightbox(this)">
+      <div class="photo-desc">Reading in a meditation room with students on cushions</div>
     </div>
     <div class="photo">
-      <img src="images/DSC04066.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">DSC04066.jpg</div>
+      <img src="images/87a25b53-e339-46b6-a782-a0e5dc5b5784.jpg" alt="Seated cross-legged facing a meditation audience" data-desc="Seated cross-legged facing a meditation audience" onclick="openLightbox(this)">
+      <div class="photo-desc">Seated cross-legged facing a meditation audience</div>
     </div>
     <div class="photo">
-      <img src="images/DSC04124.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">DSC04124.jpg</div>
+      <img src="images/97601f8b-ef8e-41ce-8e14-22df07c77177.jpg" alt="Reading, silhouetted against an ocean-view window" data-desc="Reading, silhouetted against an ocean-view window" onclick="openLightbox(this)">
+      <div class="photo-desc">Reading, silhouetted against an ocean-view window</div>
     </div>
     <div class="photo">
-      <img src="images/Gemini_Generated_Image_3vocqx3vocqx3voc.png" onclick="openLightbox(this)" alt="Gemini edited 1">
-      <div class="photo-name">Gemini edited 1</div>
+      <img src="images/D786F3A9-D456-4536-AD8E-7BA60CF424CC.jpg" alt="Silhouetted with hands in gassho, leading meditation" data-desc="Silhouetted with hands in gassho, leading meditation" onclick="openLightbox(this)">
+      <div class="photo-desc">Silhouetted with hands in gassho, leading meditation</div>
     </div>
     <div class="photo">
-      <img src="images/Gemini_Generated_Image_xi9cl6xi9cl6xi9c.png" onclick="openLightbox(this)" alt="Gemini edited 2">
-      <div class="photo-name">Gemini edited 2</div>
+      <img src="images/45026e76-fb9c-4e22-a7cb-a10a99dae196.jpg" alt="On a teaching platform facing two students on cushions" data-desc="On a teaching platform facing two students on cushions" onclick="openLightbox(this)">
+      <div class="photo-desc">On a teaching platform facing two students on cushions</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_0801.jpg" onclick="openLightbox(this)" alt="Inner MBA speaking">
-      <div class="photo-name">Inner MBA speaking</div>
+      <img src="images/33bd0be8-8cf3-4a71-acb8-16b7479bf425.jpg" alt="Walking on a sunlit hillside path" data-desc="Walking on a sunlit hillside path" onclick="openLightbox(this)">
+      <div class="photo-desc">Walking on a sunlit hillside path</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_1679.jpeg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_1679.jpeg</div>
+      <img src="images/2ec6cd26-c980-40b8-b9a3-24ed7aa8685d.jpg" alt="Walking mindfully at sunset by the water" data-desc="Walking mindfully at sunset by the water" onclick="openLightbox(this)">
+      <div class="photo-desc">Walking mindfully at sunset by the water</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3307.jpg" onclick="openLightbox(this)" alt="Book signing">
-      <div class="photo-name">Book signing</div>
+      <img src="images/80d7d0bb-5be5-4337-a36f-c26aad24500c.jpg" alt="Walking along a coastal path at sunset" data-desc="Walking along a coastal path at sunset" onclick="openLightbox(this)">
+      <div class="photo-desc">Walking along a coastal path at sunset</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3360.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3360.JPG</div>
+      <img src="images/b3a69fe2-8b1e-4762-ba9d-675f7fb715e9.jpg" alt="Walking on a dirt path at dusk with a small bell" data-desc="Walking on a dirt path at dusk with a small bell" onclick="openLightbox(this)">
+      <div class="photo-desc">Walking on a dirt path at dusk with a small bell</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3454.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3454.JPG</div>
+      <img src="images/578d6a2e-a343-4500-8810-e3deaf2074b9.jpg" alt="Leading a group walking meditation through trees" data-desc="Leading a group walking meditation through trees" onclick="openLightbox(this)">
+      <div class="photo-desc">Leading a group walking meditation through trees</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3455.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3455.JPG</div>
+      <img src="images/ba8f54e0-3e2d-4a79-a717-4fb2b3e7164b.jpg" alt="Walking toward a group watching the sunset over the ocean" data-desc="Walking toward a group watching the sunset over the ocean" onclick="openLightbox(this)">
+      <div class="photo-desc">Walking toward a group watching the sunset over the ocean</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3718.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3718.jpg</div>
+      <img src="images/282bb132-e0cd-4971-a7e9-2e94ffb7dadd.jpg" alt="Silhouetted in meditation with an ocean view" data-desc="Silhouetted in meditation with an ocean view" onclick="openLightbox(this)">
+      <div class="photo-desc">Silhouetted in meditation with an ocean view</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3730.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3730.jpg</div>
+      <img src="images/36db2829-c337-4907-b989-f51d1a5eb13e.jpg" alt="Silhouetted in a meditation hall overlooking the ocean" data-desc="Silhouetted in a meditation hall overlooking the ocean" onclick="openLightbox(this)">
+      <div class="photo-desc">Silhouetted in a meditation hall overlooking the ocean</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3731.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3731.jpg</div>
+      <img src="images/c4ec4ebe-a06f-4cd9-9a76-50b264456c0c.jpg" alt="Silhouetted in a meditation hall with cushions and ocean view" data-desc="Silhouetted in a meditation hall with cushions and ocean view" onclick="openLightbox(this)">
+      <div class="photo-desc">Silhouetted in a meditation hall with cushions and ocean view</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3745.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3745.jpg</div>
+      <img src="images/IMG_3718.jpg" alt="Meditation hall with rows of cushions and ocean view" data-desc="Meditation hall with rows of cushions and ocean view" onclick="openLightbox(this)">
+      <div class="photo-desc">Meditation hall with rows of cushions and ocean view</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3747.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3747.jpg</div>
+      <img src="images/IMG_3730.jpg" alt="Rows of black meditation cushions arranged for a session" data-desc="Rows of black meditation cushions arranged for a session" onclick="openLightbox(this)">
+      <div class="photo-desc">Rows of black meditation cushions arranged for a session</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3830.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3830.JPG</div>
+      <img src="images/40623dc6-d1e0-4f6b-87b1-52c7db49cd33.jpg" alt="Close-up of a singing bowl and meditation instruments by a window" data-desc="Close-up of a singing bowl and meditation instruments by a window" onclick="openLightbox(this)">
+      <div class="photo-desc">Close-up of a singing bowl and meditation instruments by a window</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3923.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3923.jpg</div>
+      <img src="images/IMG_3745.jpg" alt="Tingsha chimes and singing bowl on a colorful cushion" data-desc="Tingsha chimes and singing bowl on a colorful cushion" onclick="openLightbox(this)">
+      <div class="photo-desc">Tingsha chimes and singing bowl on a colorful cushion</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_3934.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_3934.jpg</div>
+      <img src="images/IMG_3747.jpg" alt="Tingsha cymbals, striker, and singing bowl on a cushion" data-desc="Tingsha cymbals, striker, and singing bowl on a cushion" onclick="openLightbox(this)">
+      <div class="photo-desc">Tingsha cymbals, striker, and singing bowl on a cushion</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_4064-cropped.jpg" onclick="openLightbox(this)" alt="Japan recognition">
-      <div class="photo-name">Japan recognition</div>
+      <img src="images/IMG_3307.jpg" alt="Writing with meditation tools arranged on the floor" data-desc="Writing with meditation tools arranged on the floor" onclick="openLightbox(this)">
+      <div class="photo-desc">Writing with meditation tools arranged on the floor</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_4064.JPG" onclick="openLightbox(this)" alt="Japan ceremony">
-      <div class="photo-name">Japan ceremony</div>
+      <img src="images/b5a8230b-e99e-4632-a6ab-59be030412ca.jpg" alt="Seated cross-legged with mala beads and a notebook" data-desc="Seated cross-legged with mala beads and a notebook" onclick="openLightbox(this)">
+      <div class="photo-desc">Seated cross-legged with mala beads and a notebook</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_4065.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_4065.JPG</div>
+      <img src="images/9e7bfc55-a744-4ed7-9871-3129b605a0bd.jpg" alt="Large group meditation session in a spacious tent hall" data-desc="Large group meditation session in a spacious tent hall" onclick="openLightbox(this)">
+      <div class="photo-desc">Large group meditation session in a spacious tent hall</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_5191.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_5191.JPG</div>
+      <img src="images/5397fe4b-da59-4f10-8fa7-500d8541e907.jpg" alt="Group meditation viewed from behind, facing two teachers" data-desc="Group meditation viewed from behind, facing two teachers" onclick="openLightbox(this)">
+      <div class="photo-desc">Group meditation viewed from behind, facing two teachers</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_5774.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_5774.JPG</div>
+      <img src="images/93125dfb-023a-4ba7-9ff8-9a93c740adf2.jpg" alt="Large group gathered outdoors on a sunny day at a retreat" data-desc="Large group gathered outdoors on a sunny day at a retreat" onclick="openLightbox(this)">
+      <div class="photo-desc">Large group gathered outdoors on a sunny day at a retreat</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_5913.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_5913.JPG</div>
+      <img src="images/904964f7-fcf9-4cd7-bbce-b3f17cf45f32.jpg" alt="Pink dahlias blooming in a garden at golden hour" data-desc="Pink dahlias blooming in a garden at golden hour" onclick="openLightbox(this)">
+      <div class="photo-desc">Pink dahlias blooming in a garden at golden hour</div>
     </div>
     <div class="photo">
-      <img src="images/IMG_5916.JPG" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">IMG_5916.JPG</div>
+      <img src="images/buddhas-office-cover.jpg" alt="Book cover: Buddha's Office by Dan Zigmond" data-desc="Book cover: Buddha's Office by Dan Zigmond" onclick="openLightbox(this)">
+      <div class="photo-desc">Book cover: Buddha's Office by Dan Zigmond</div>
     </div>
     <div class="photo">
-      <img src="images/MarcusTrawick-204.jpg" onclick="openLightbox(this)" alt="Robes portrait">
-      <div class="photo-name">Robes portrait</div>
-    </div>
-    <div class="photo">
-      <img src="images/MarcusTrawick-205.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">MarcusTrawick-205.jpg</div>
-    </div>
-    <div class="photo">
-      <img src="images/MarcusTrawick-90-web.jpg" onclick="openLightbox(this)" alt="Seated outdoors">
-      <div class="photo-name">Seated outdoors</div>
-    </div>
-    <div class="photo">
-      <img src="images/MarcusTrawick-90.jpg" onclick="openLightbox(this)" alt="Photo">
-      <div class="photo-name">MarcusTrawick-90.jpg</div>
-    </div>
-    <div class="photo">
-      <img src="images/Old school Dan.jpg" onclick="openLightbox(this)" alt="Old school Dan">
-      <div class="photo-name">Old school Dan</div>
-    </div>
-    <div class="photo">
-      <img src="images/shuso.jpg" onclick="openLightbox(this)" alt="Robes with kids">
-      <div class="photo-name">Robes with kids</div>
+      <img src="images/buddhas-diet-cover.jpg" alt="Book cover: Buddha's Diet by Tara Cottrell and Dan Zigmond" data-desc="Book cover: Buddha's Diet by Tara Cottrell and Dan Zigmond" onclick="openLightbox(this)">
+      <div class="photo-desc">Book cover: Buddha's Diet by Tara Cottrell and Dan Zigmond</div>
     </div>
   </div>
 
-  <div class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close">&times;</span>
-    <img src="" alt="Full size">
-    <div class="lightbox-name"></div>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-desc" id="lightbox-desc"></div>
   </div>
 
   <script>
     function openLightbox(img) {
-      const lightbox = document.querySelector('.lightbox');
-      const lightboxImg = lightbox.querySelector('img');
-      const lightboxName = lightbox.querySelector('.lightbox-name');
-      lightboxImg.src = img.src;
-      lightboxName.textContent = img.src.split('/').pop();
-      lightbox.classList.add('active');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-desc').textContent = img.dataset.desc;
+      document.getElementById('lightbox').classList.add('active');
     }
     function closeLightbox() {
-      document.querySelector('.lightbox').classList.remove('active');
+      document.getElementById('lightbox').classList.remove('active');
     }
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
