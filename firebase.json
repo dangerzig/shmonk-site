@@ -17,7 +17,10 @@
       "package.json",
       "package-lock.json",
       "scripts",
-      "scripts/**"
+      "scripts/**",
+      "~$*",
+      ".tmp.driveupload",
+      ".tmp.driveupload/**"
     ]
   }
 }
