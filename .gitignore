@@ -7,3 +7,5 @@ node_modules/
 .firebase/
 firebase-debug.log
 *.log
+~$*
+.tmp.driveupload/
