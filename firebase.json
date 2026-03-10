@@ -21,7 +21,11 @@
       "scripts/**",
       "~$*",
       ".tmp.driveupload",
-      ".tmp.driveupload/**"
+      ".tmp.driveupload/**",
+      "gallery.html",
+      ".#*",
+      "#*#",
+      "*~"
     ]
   }
 }
