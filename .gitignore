@@ -9,3 +9,11 @@ firebase-debug.log
 *.log
 ~$*
 .tmp.driveupload/
+*~
+\#*\#
+.\#*
+linkedin-post.md
+*-redline.html
+*-redline.pdf
+test-*.html
+dan-zigmond-resume*
