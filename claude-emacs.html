@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Claude Code + Emacs Integration</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1 { font-size: 1.6em; margin-bottom: 0.3em; }
+    h2 { font-size: 1.2em; margin-top: 1.5em; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+    a { color: #0066cc; }
+    .download {
+      display: inline-block;
+      margin: 1.5em 0;
+      padding: 12px 24px;
+      background: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .download:hover { background: #0052a3; }
+    ul { padding-left: 1.4em; }
+    li { margin-bottom: 0.5em; }
+  </style>
+</head>
+<body>
+  <h1>Claude Code + Emacs Integration</h1>
+  <p>My setup for running <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> inside Emacs, so that Claude can both run in a terminal buffer and control Emacs itself (open files, launch shells, create frames, etc.).</p>
+
+  <a class="download" href="/claude-emacs-setup.zip">Download zip</a>
+
+  <h2>What's included</h2>
+  <ul>
+    <li><code>ec</code> &mdash; A wrapper script that gives Claude a reliable path to <code>emacsclient</code>. On macOS, the binary bundled inside Emacs.app isn't on the default PATH.</li>
+    <li><code>init-excerpt.el</code> &mdash; The relevant sections of my Emacs config: server start, vterm setup, Claude Code launch commands, auto-revert, and exec-path-from-shell.</li>
+    <li><code>CLAUDE.md</code> &mdash; The instructions that teach Claude how to interact with Emacs: opening files, jumping to lines, launching terminals, cleaning up buffers, etc.</li>
+    <li><code>README.md</code> &mdash; Full setup instructions.</li>
+  </ul>
+
+  <h2>Quick setup</h2>
+  <ol>
+    <li>Install <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> and <a href="https://github.com/akermu/emacs-libvterm">vterm</a> for Emacs.</li>
+    <li>Copy the relevant pieces from <code>init-excerpt.el</code> into your Emacs config.</li>
+    <li>Place <code>ec</code> on your PATH (e.g., <code>~/.local/bin/ec</code>) and make it executable.</li>
+    <li>Add the contents of <code>CLAUDE.md</code> to your Claude Code configuration.</li>
+    <li>Open Emacs, then <code>C-c c c</code> to launch Claude Code in a vterm buffer.</li>
+  </ol>
+
+  <h2>How it works</h2>
+  <p>Claude Code runs inside vterm, which is itself an Emacs buffer. Claude then uses emacsclient to reach back into Emacs. This two-way communication is what makes the integration feel seamless.</p>
+
+  <h2>Update: MCP server (faster approach)</h2>
+  <p>The emacsclient approach above works well, but every call spawns a new process (~24ms overhead). I've since built an <a href="https://github.com/dangerzig/emacs-mcp">MCP server</a> that replaces emacsclient with a persistent TCP connection. The result is ~120x faster (0.2ms vs 24ms per call) and bidirectional: Claude can also <em>read</em> from Emacs (buffer contents, selections, buffer list), not just write to it.</p>
+  <p>The MCP server provides tools for evaluating elisp, opening files, reading buffers, getting selections, and inserting text into the scratch buffer. See the <a href="https://github.com/dangerzig/emacs-mcp">GitHub repo</a> for setup instructions.</p>
+
+  <p style="margin-top: 2em; color: #999; font-size: 0.85em;">&mdash; <a href="/" style="color: #999;">Dan Zigmond</a></p>
+</body>
+</html>
