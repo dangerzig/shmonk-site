@@ -60,8 +60,8 @@
   <p>Claude Code runs inside vterm, which is itself an Emacs buffer. Claude then uses emacsclient to reach back into Emacs. This two-way communication is what makes the integration feel seamless.</p>
 
   <h2>Update: MCP server (faster approach)</h2>
-  <p>The emacsclient approach above works well, but every call spawns a new process (~24ms overhead). I've since built an <a href="https://github.com/dangerzig/emacs-mcp">MCP server</a> that replaces emacsclient with a persistent TCP connection. The result is ~120x faster (0.2ms vs 24ms per call) and bidirectional: Claude can also <em>read</em> from Emacs (buffer contents, selections, buffer list), not just write to it.</p>
-  <p>The MCP server provides tools for evaluating elisp, opening files, reading buffers, getting selections, and inserting text into the scratch buffer. See the <a href="https://github.com/dangerzig/emacs-mcp">GitHub repo</a> for setup instructions.</p>
+  <p>The emacsclient approach above works well, but every call spawns a new process (~24ms overhead). I've since built an <a href="https://github.com/dangerzig/emacs-mcp">MCP server</a> that replaces emacsclient with a persistent TCP connection. The result is ~25-30x faster and bidirectional: Claude can also <em>read</em> from Emacs (buffer contents, selections, buffer list), not just write to it.</p>
+  <p>The MCP server provides seven tools: evaluating elisp, opening files, reading buffer contents, listing buffers, getting selections, saving buffers, and inserting text into the scratch buffer. See the <a href="https://github.com/dangerzig/emacs-mcp">GitHub repo</a> for setup instructions.</p>
 
   <p style="margin-top: 2em; color: #999; font-size: 0.85em;">&mdash; <a href="/" style="color: #999;">Dan Zigmond</a></p>
 </body>
