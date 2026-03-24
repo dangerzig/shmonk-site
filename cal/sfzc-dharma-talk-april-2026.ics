@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//shmonk.com//Events//EN
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20260408T193000
+DTEND;TZID=America/Los_Angeles:20260408T210000
+SUMMARY:Evening Dharma Talk: Dan Zigmond at SFZC
+LOCATION:San Francisco Zen Center, 300 Page St, San Francisco, CA
+DESCRIPTION:Dharma talk by Dan Zigmond. In-person and Zoom.\n\nDetails: https://www.sfzc.org/calendar/events/city-center/wednesday-730-pm-dharma-talk-dan-zigmond-livestreamonsite-48
+URL:https://www.sfzc.org/calendar/events/city-center/wednesday-730-pm-dharma-talk-dan-zigmond-livestreamonsite-48
+END:VEVENT
+END:VCALENDAR

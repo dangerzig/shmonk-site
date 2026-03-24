@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//shmonk.com//Events//EN
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20260407T190000
+DTEND;TZID=America/Los_Angeles:20260407T203000
+SUMMARY:Zen and Modern Life with Dan Zigmond
+LOCATION:SF Dharma Collective, San Francisco
+DESCRIPTION:Monthly talk with Dan Zigmond. In-person and online.\n\nRegister: https://events.humanitix.com/zen-and-modern-life
+URL:https://events.humanitix.com/zen-and-modern-life
+END:VEVENT
+END:VCALENDAR
